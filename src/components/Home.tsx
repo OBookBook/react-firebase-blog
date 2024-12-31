@@ -1,6 +1,6 @@
 import "./Home.css";
-import { useEffect, useState } from "react";
 import { db } from "../firebase";
+import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 
 interface Post {
