@@ -1,5 +1,5 @@
 import "./Home.css";
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
 import { useEffect, useState } from "react";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 
@@ -8,6 +8,7 @@ interface Post {
   title: string;
   postsText: string;
   author: {
+    id: string;
     username: string;
   };
 }
@@ -44,7 +45,9 @@ const Home = () => {
           <div className="postTextContainer">{post.postsText}</div>
           <div className="nameAndDeleteBtn">
             <h3>@{post.author.username}</h3>
-            <button onClick={() => handleDelete(post.id)}>delete</button>
+            {post.author.id === auth.currentUser!.uid && (
+              <button onClick={() => handleDelete(post.id)}>delete</button>
+            )}
           </div>
         </div>
       ))}
