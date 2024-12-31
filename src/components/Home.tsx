@@ -45,7 +45,7 @@ const Home = () => {
           <div className="postTextContainer">{post.postsText}</div>
           <div className="nameAndDeleteBtn">
             <h3>@{post.author.username}</h3>
-            {post.author.id === auth.currentUser!.uid && (
+            {auth.currentUser && post.author.id === auth.currentUser.uid && (
               <button onClick={() => handleDelete(post.id)}>delete</button>
             )}
           </div>
