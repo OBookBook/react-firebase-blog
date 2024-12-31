@@ -1,5 +1,6 @@
-import { signOut } from "firebase/auth";
+import "./../App.css";
 import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 interface LoginProps {
