@@ -18,7 +18,7 @@ const Login = ({ setIsAuth }: LoginProps) => {
 
   return (
     <div>
-      <p>Login</p>
+      <h2>Login</h2>
       <button onClick={loginInWithGoogle}>Googleにログイン</button>
     </div>
   );

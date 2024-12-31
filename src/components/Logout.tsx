@@ -18,6 +18,7 @@ const Logout = ({ setIsAuth }: LoginProps) => {
 
   return (
     <div>
+      <h2>Logout</h2>
       <button onClick={logout}>Logout</button>
     </div>
   );
