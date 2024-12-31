@@ -8,7 +8,9 @@ import Navbar from "./components/Navbar";
 import { useState } from "react";
 
 function App() {
-  const [isAuth, setIsAuth] = useState<boolean>(false);
+  const [isAuth, setIsAuth] = useState<boolean>(
+    localStorage.getItem("isAuth") === "true"
+  );
 
   return (
     <>
