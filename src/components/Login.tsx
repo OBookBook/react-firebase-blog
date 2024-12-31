@@ -1,6 +1,7 @@
-import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth";
+import "./../App.css";
 
 interface LoginProps {
   setIsAuth: (isAuth: boolean) => void;
@@ -17,7 +18,7 @@ const Login = ({ setIsAuth }: LoginProps) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Login</h2>
       <button onClick={loginInWithGoogle}>Googleにログイン</button>
     </div>
