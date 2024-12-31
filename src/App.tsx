@@ -21,7 +21,10 @@ function App() {
             path="/login"
             element={<Login setIsAuth={setIsAuth} />}
           ></Route>
-          <Route path="/logout" element={<Logout />}></Route>
+          <Route
+            path="/logout"
+            element={<Logout setIsAuth={setIsAuth} />}
+          ></Route>
         </Routes>
       </Router>
     </>
