@@ -9,7 +9,7 @@ interface LoginProps {
 const Login = ({ setIsAuth }: LoginProps) => {
   const navigate = useNavigate();
   const loginInWithGoogle = () => {
-    signInWithPopup(auth, provider).then((result) => {
+    signInWithPopup(auth, provider).then(() => {
       localStorage.setItem("isAuth", "true");
       setIsAuth(true);
       navigate("/");
