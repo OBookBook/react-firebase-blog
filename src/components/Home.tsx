@@ -1,7 +1,7 @@
 import "./Home.css";
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 
 interface Post {
   id: string;
@@ -29,6 +29,11 @@ const Home = () => {
     getPosts();
   }, []);
 
+  const handleDelete = async (id: string) => {
+    await deleteDoc(doc(db, "posts", id));
+    window.location.href = "/";
+  };
+
   return (
     <div className="homePage">
       {postList.map((post) => (
@@ -39,7 +44,7 @@ const Home = () => {
           <div className="postTextContainer">{post.postsText}</div>
           <div className="nameAndDeleteBtn">
             <h3>@{post.author.username}</h3>
-            <button>delete</button>
+            <button onClick={() => handleDelete(post.id)}>delete</button>
           </div>
         </div>
       ))}
